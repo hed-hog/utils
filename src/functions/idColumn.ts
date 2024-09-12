@@ -7,5 +7,6 @@ export const idColumn = (name = 'id') => {
     isPrimary: true,
     isGenerated: true,
     generationStrategy: 'increment',
+    unsigned: true,
   } as TableColumn;
 };
