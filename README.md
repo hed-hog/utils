@@ -1,4 +1,8 @@
-# hedhog/utils
+# <p align="center">hedhog/utils</p>
+
+<p align="center">
+  <img src="https://avatars.githubusercontent.com/u/177489127?s=200&v=4" alt="Hedhog Avatar" />
+</p>
 
 Welcome to the **hedhog/utils** repository! This package contains utility functions, mainly designed to simplify database migrations, particularly for adding common columns like `id` and `timestamp` in a [**TypeORM**](https://typeorm.io/) project.
 
