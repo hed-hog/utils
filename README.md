@@ -74,3 +74,19 @@ export class CreateYourTable1612345678901 implements MigrationInterface {
   }
 }
 ```
+
+## Folder Structure
+
+The following is the folder structure of the repository:
+
+```plaintext
+hedhog-utils/
+├── src/                  # Source code for the utility functions
+│   └── functions/        # Folder containing individual utility functions
+├── .gitignore            # Specifies files and directories to be ignored by Git
+├── node_modules/         # Directory containing project dependencies (generated automatically by running npm install)
+├── package-lock.json     # Ensures consistent installs across different environments
+├── package.json          # Contains project metadata and dependencies
+├── tsconfig.json         # TypeScript configuration for the project
+└── README.md             # Documentation for the project
+```
