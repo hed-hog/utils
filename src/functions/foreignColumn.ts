@@ -11,6 +11,5 @@ export const foreignColumn = ({
     unsigned: true,
     isPrimary,
     isNullable,
-    default
   } as TableColumn;
 };
