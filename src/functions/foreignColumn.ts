@@ -4,7 +4,11 @@ export const foreignColumn = ({
   name,
   isPrimary = false,
   isNullable = false,
-}: TableColumn) => {
+}: {
+  name: string;
+  isPrimary?: boolean;
+  isNullable?: boolean;
+}) => {
   return {
     name,
     type: 'int',
