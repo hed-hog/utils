@@ -10,6 +10,8 @@ Welcome to the **hedhog/utils** repository! This package contains utility functi
 
 - **`idColumn`**: Automatically generates an `id` column in your database via migration, making it easier to define primary keys.
 - **`timestampColumn`**: Automatically creates a `timestamp` column to track creation and update times for your records.
+- **`itemTranslations`**: Extracts translations from a specified translation key (e.g., group_translations, translations) within an item object. This function is particularly useful for handling translation data and integrating it smoothly into an object for display or processing.
+- **`foreignColumn`**: Creates a foreign key column for a database table using TypeORM. It's particularly useful for defining foreign key relationships in migrations or database schemas.
 
 ## Installation
 
@@ -29,7 +31,7 @@ yarn add @hedhog/utils
 
 Here’s how you can use the utility functions in your **TypeORM** migrations:
 
-### Example: Using `idColumn`
+### Example using `idColumn`
 
 ```typescript
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
@@ -77,6 +79,53 @@ export class CreateYourTable1612345678901 implements MigrationInterface {
     await queryRunner.dropTable("your_table");
   }
 }
+```
+
+### Example using `itemTranslations`
+
+```typescript
+const item = {
+  id: 1,
+  group_translations: [
+    { name: "Group Name", description: "Group Description" },
+  ],
+  slug: "example-slug",
+};
+
+const translatedItem = itemTranslations("group_translations", item);
+
+console.log(translatedItem);
+/*
+Output:
+{
+  id: 1,
+  slug: "example-slug",
+  name: "Group Name",
+  description: "Group Description"
+}
+*/
+```
+
+### Example using `foreignColumn`
+
+```typescript
+const foreignKey = foreignColumn({
+  name: "user_id",
+  isPrimary: false,
+  isNullable: false,
+});
+
+console.log(foreignKey);
+/*
+Output:
+{
+  name: 'user_id',
+  type: 'int',
+  unsigned: true,
+  isPrimary: false,
+  isNullable: false,
+}
+*/
 ```
 
 ## Folder Structure
