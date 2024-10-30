@@ -1,9 +1,16 @@
 export function singularToPlural(word: string): string {
-  const pluralRules = new Intl.PluralRules('en', { type: 'cardinal' });
-  const pluralRule = pluralRules.select(2);
+  if (word.endsWith('y')) {
+    return word.slice(0, -1) + 'ies';
+  } else if (word.endsWith('s') && !word.endsWith('ss')) {
+    return word + 'es';
+  }
 
-  if (pluralRule === 'one') {
-    return word;
+  if (word === 'child') {
+    return 'children';
+  } else if (word === 'person') {
+    return 'people';
+  } else if (word === '') {
+    // handle empty string case if needed
   }
 
   return word + 's';
