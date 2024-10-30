@@ -8,9 +8,10 @@ export const formatDataWithLocale = (data: any) => {
       newData[keys[0]] = data[keys[0]];
     } else {
       if (!newData[keys[0]]) {
-        newData[keys[0]] = {};
+        newData.locales = {};
       }
-      newData[keys[0]][keys[1]] = data[key];
+
+      newData.locales[keys[0]][keys[1]] = data[key];
     }
   }
 
