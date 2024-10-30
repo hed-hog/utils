@@ -8,3 +8,4 @@ export * from './getLocaleFields';
 export * from './getObjectFromLocaleFields';
 export * from './pluralToSingular';
 export * from './singularToPlural';
+export * from './getLocalesFromItem';
