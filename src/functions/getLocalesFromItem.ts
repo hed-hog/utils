@@ -1,13 +1,13 @@
-export const getLocalesFromItem = (item) => {
-  const fields: string[] = [];
+export const getLocalesFromItem = (item: any) => {
+  if (item) {
+    const fields: string[] = [];
 
-  for (const itemLocale of (item as any).locales ?? []) {
-    for (const key in itemLocale) {
-      if (key !== 'locales') {
-        fields.push(key);
-      }
+    for (const itemLocale of (item as any).locales ?? []) {
+      fields.push(itemLocale.locales.code);
     }
-  }
 
-  return fields;
+    return [...new Set(fields)];
+  } else {
+    return [];
+  }
 };
