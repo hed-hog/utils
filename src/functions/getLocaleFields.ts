@@ -6,13 +6,13 @@ export const getLocaleFields = (item) => {
     fieldNameLocale: string;
   }[] = [];
 
-  for (const itemLocale of (item as any).locales ?? []) {
+  for (const itemLocale of (item as any).locale ?? []) {
     for (const key in itemLocale) {
-      if (key !== 'locales') {
+      if (key !== 'locale') {
         fields.push({
           fieldName: key,
-          fieldNameLocale: `${itemLocale.locales.code}-${key}`,
-          localeCode: itemLocale.locales.code,
+          fieldNameLocale: `${itemLocale.locale.code}-${key}`,
+          localeCode: itemLocale.locale.code,
           value: itemLocale[key],
         });
       }

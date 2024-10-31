@@ -1,16 +1,20 @@
-export const getWithLocale = (locale: string, tableLocaleName: string, data: any) => {
-    const locales = [...data[tableLocaleName]];
+export const getWithLocale = (
+  localeCode: string,
+  tableLocaleName: string,
+  data: any
+) => {
+  const locale = [...data[tableLocaleName]];
 
-    delete data[tableLocaleName];
+  delete data[tableLocaleName];
 
-    const newData: any = { ...data, locales };
-    const current = locales.find((l) => l.locales.code === locale);
+  const newData: any = { ...data, locale };
+  const current = locale.find((l) => l.locale.code === localeCode);
 
-    for (const key in current) {
-      if (key !== 'locales') {
-        newData[key] = current[key];
-      }
+  for (const key in current) {
+    if (key !== 'locale') {
+      newData[key] = current[key];
     }
-
-    return newData;
   }
+
+  return newData;
+};
