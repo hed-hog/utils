@@ -4,7 +4,7 @@ export const itemTranslations = <T extends any>(
 ) => {
   let locale = {};
 
-  if (item[translationKey].length > 0) {
+  if (item[translationKey] && item[translationKey]?.length > 0) {
     locale = { ...item[translationKey][0] };
   }
 
