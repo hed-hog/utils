@@ -10,10 +10,6 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "class-validator": "^0.14.1",
-    "@nestjs/common": "^10.4.7"
-  },
   "devDependencies": {
     "@types/node": "^22.5.0",
     "typeorm": "^0.3.20",
