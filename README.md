@@ -1,4 +1,4 @@
-# <p align="center">hedhog/utils</p>
+# <p align="center">@hedhog/utils</p>
 
 <p align="center">
   <img src="https://avatars.githubusercontent.com/u/177489127?s=200&v=4" alt="Hedhog Avatar" />
