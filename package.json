@@ -1,6 +1,6 @@
 {
   "name": "@hedhog/utils",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc && npm version patch",
